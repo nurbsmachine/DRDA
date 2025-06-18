@@ -35,11 +35,11 @@ git submodule update --init --recursive
 
 ###  3. Launch Docker Environment
 
-## This will launch : 
-# ROS Mter
-# Compas RRC Drivers for /rob1 and /rob2 
-
+ This will launch : 
+ ROS Mter
+ Compas RRC Drivers for /rob1 and /rob2 
+```bash
 cd docker
 docker compose up --build
-
+```
 ###  4. Launch Docker Environment
