@@ -26,9 +26,11 @@ This repository contains all code, configuration, and workflows required to simu
 ```bash
 git clone https://github.com/YOUR_USERNAME/DRDA.git
 cd DRDA
-
+```
 ###  2. Initialize Submodules
+```bash
 git submodule update --init --recursive
+```
 
 ###  3. Launch Docker Environment
 
