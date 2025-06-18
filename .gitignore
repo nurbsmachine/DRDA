@@ -46,3 +46,21 @@ external/compas_rrc/
 # Project-specific
 notebooks/output/
 data/
+
+# Ignore everything except versioned sample files
+data/*
+!data/README.md
+!data/*.json
+
+
+# Jupyter autosave files
+*.ipynb~
+
+# Python profiling/debug output
+*.prof
+*.pstats
+
+# Rhino/Grasshopper auto-cache (optional, if used)
+*.3dm~
+*.ghx
+*.ghdata
