@@ -1,4 +1,4 @@
-# DRDA – Dynamic Robotic Design Activities
+# DRDA – [D]ynamic [R]obotic [D]esign [A]ctivities
 
 
 DRDA is a modular robotic framework for dual-robot pick-and-place tasks, designed for architectural and fabrication workflows using ABB IRB 6700 robots.
