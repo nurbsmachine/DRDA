@@ -7,7 +7,6 @@ It combines [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) with Docker, 
 
 > 🛠️ Based on: [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) and [compas_rrc_start](https://github.com/compas-rrc/compas_rrc_start)
 
----
 
 
 
@@ -24,7 +23,7 @@ It combines [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) with Docker, 
 ---
 
 ## 📦 Repo Structure
-
+```
 ├── notebooks/ # Jupyter Notebooks for simulations, tests
 ├── src/robot/ # Python modules and robotic control logic
 ├── docker/ # Docker setup for ROS & COMPAS RRC
@@ -33,7 +32,7 @@ It combines [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) with Docker, 
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
+```
 
 
 ---
