@@ -1,0 +1,48 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+*.pyd
+*.pyo
+
+# Jupyter Notebook metadata
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# VS Code project settings
+.vscode/
+
+# Mac & system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Docker files
+docker-compose.override.yml
+*.tar
+*.gz
+*.zip
+
+# Compiled outputs
+*.out
+*.exe
+*.dll
+
+# External submodules (optional)
+external/compas_rrc/
+
+# Project-specific
+notebooks/output/
+data/
