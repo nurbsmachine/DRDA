@@ -24,7 +24,8 @@ This repository contains all code, configuration, and workflows required to simu
 
 ###  1. Clone the Repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/DRDA.git
+git clone https://github.com/nurbsmachine/DRDA.git
+
 cd DRDA
 ```
 ###  2. Initialize Submodules
