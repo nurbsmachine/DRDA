@@ -1,9 +1,16 @@
 # DRDA – Dynamic Robotic Design Activities
 
-A modular, deployable system for robotic design and assembly using dual ABB IRB 6700 robots.  
-This repository contains all code, configuration, and workflows required to simulate and execute robotic pick-and-place tasks using COMPAS RRC and Docker.
+
+DRDA is a modular robotic framework for dual-robot pick-and-place tasks, designed for architectural and fabrication workflows using ABB IRB 6700 robots.
+
+It combines [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) with Docker, Jupyter, and parametric frame exports from Grasshopper to enable a full digital-to-robotic pipeline.
+
+> 🛠️ Based on: [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) and [compas_rrc_start](https://github.com/compas-rrc/compas_rrc_start)
 
 ---
+
+
+
 
 ## Features
 
@@ -44,7 +51,20 @@ cd DRDA
 git submodule update --init --recursive
 ```
 
-###  3. Launch Docker Environment
+###  3. Install Python Dependencies
+for notebook use
+```bash
+pip install -r requirements.txt
+
+```
+In a virtual environment
+```bash
+python -m venv .venv
+source .venv/bin/activate  # or .venv\Scripts\activate on Windows
+pip install -r requirements.txt
+```
+
+###  4. Launch Docker Environment
 
  This will launch : 
  ROS Master,
@@ -52,5 +72,62 @@ git submodule update --init --recursive
 ```bash
 cd docker
 docker compose up --build
+
 ```
-###  4. Launch Docker Environment
+
+## 🤖 Robot Workflow Overview
+
+- Hardware: ABB IRB 6700 (dual robot setup)
+- Controller: OmniCore
+- Control via: COMPAS RRC, ROS (Docker), Python
+- Frame logic: Frames are exported from Grasshopper, structured in JSON, and used for pick/place paths
+- Gripper control: Via `SetDigital` I/O commands
+- Motion execution: `MoveToFrame`, `Translation.from_vector(...)` for approach/retreat logic
+
+
+## 📚 Example Notebooks
+
+Check the `notebooks/` folder for Jupyter-based control logic.
+
+- `rrc_picknplace altpunk.ipynb`: Executes dual-robot pick-and-place cycle using predefined frames.
+
+
+## Tips
+> 💡 Tip: Always test movements in RobotStudio before executing on real robots.
+
+
+## Credits
+This repo builds upon the following open-source projects:
+
+- [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) – Remote robot control framework by ETH Zurich
+- [compas_rrc_start](https://github.com/compas-rrc/compas_rrc_start) – Starter environment with Docker integration
+
+
+---
+
+## 🙌 Acknowledgements
+
+This project was made possible through the support and mentorship of two key individuals:
+
+### 🎓 Thesis Advisor: [Júlia Marsal Perendreu](https://www.linkedin.com/in/juliamarsalrobotics/) ([GitHub](https://github.com/roboticswithjulia))
+
+For guiding the research direction of DRDA and helping shape the architectural and robotic vision  
+that drives this system. Their insights into fabrication logic, design constraints, and modularity  
+pushed this project to operate not just technically — but intelligently.
+
+### 👨‍🏫 Faculty Advisor: [Huanyu Li](https://www.linkedin.com/in/huanyu-li-457590268/) ([GitHub](https://github.com/HuanyuL))
+
+For being the backbone of the execution. From hands-on debugging of ROS-Docker systems  
+to helping structure the motion logic, signal synchronization, and simulation pipelines,  
+this project wouldn’t have run — literally — without their relentless support.
+
+Their mentorship transformed this workflow from a set of ideas into a working robotic system.
+
+---
+
+> 🙏 To both: thank you for believing in this work and pushing me to take it further.
+
+## License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for details.
