@@ -51,17 +51,26 @@ cd DRDA
 git submodule update --init --recursive
 ```
 
-###  3. Install Python Dependencies
-for notebook use
+```md
+> ℹ️ If `external/compas_rrc/` is included, it contains the official [COMPAS RRC](https://github.com/compas-rrc/compas_rrc) as a Git submodule. Run the command above to initialize it.
+```
+
+### 3. Install Dependencies (Recommended via Conda)
+
+If using Anaconda:
+
 ```bash
-pip install -r requirements.txt
+conda create -n drda python=3.9
+conda activate drda
+pip install compas compas_rrc jupyterlab ipywidgets
+```
+if using pip:
 
 ```
-In a virtual environment
-```bash
 python -m venv .venv
 source .venv/bin/activate  # or .venv\Scripts\activate on Windows
 pip install -r requirements.txt
+
 ```
 
 ###  4. Launch Docker Environment
@@ -74,6 +83,13 @@ cd docker
 docker compose up --build
 
 ```
+This will start:
+- ROS Master node
+- COMPAS RRC drivers for `/rob1` and `/rob2`
+- It connects to ABB OmniCore via IP and streaming ports (e.g., 30101, 30201)
+Make sure your RobotStudio simulation or real robot is reachable at the configured IP.
+
+---
 
 ## 🤖 Robot Workflow Overview
 
