@@ -1,0 +1,33 @@
+# 🐳 Docker Setup for DRDA
+
+This folder contains two Docker Compose environments to launch the ROS master and COMPAS RRC driver containers.
+
+---
+
+## 🏭 real_bringup/ — For Real ABB Robots
+
+Use this setup to control **physical ABB IRB 6700** robots over a LAN (OmniCore controller).
+
+```bash
+cd docker/real_bringup
+docker compose up --build
+```
+-Make sure robots are powered, reachable via IP (e.g. 192.168.0.10)
+
+-Robot must be in Auto mode
+
+-Streaming ports 30101 and 30201 should be open
+
+---
+
+## 🤖 virtual_bringup/ — For RobotStudio Simulation
+
+Use this setup to control virtual robots in ABB RobotStudio on your local machine.
+
+```bash
+cd docker/virtual_bringup
+docker compose up --build
+```
+-RobotStudio must be open and simulation running
+
+-IP should match your virtual controller (often 127.0.0.1 or 192.168.125.1)
