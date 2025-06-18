@@ -5,6 +5,17 @@ This repository contains all code, configuration, and workflows required to simu
 
 ---
 
+## Features
+
+- Dual ABB robot control
+- COMPAS RRC integration
+- Dockerized ROS setup
+- Modular Python scripts
+- Jupyter-based debugging
+- Parametric frame control
+
+---
+
 ## 📦 Repo Structure
 
 ├── notebooks/ # Jupyter Notebooks for simulations, tests
@@ -36,7 +47,7 @@ git submodule update --init --recursive
 ###  3. Launch Docker Environment
 
  This will launch : 
- ROS Mter
+ ROS Master,
  Compas RRC Drivers for /rob1 and /rob2 
 ```bash
 cd docker
